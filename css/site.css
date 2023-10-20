@@ -72,6 +72,7 @@ a {
 .nav-link {
   color: var(--p-cool-color);
   cursor: pointer;
+  transition: color 0.5s ease;
 }
 
 .active {
@@ -82,13 +83,14 @@ a {
 }
 
 .navbar-styling {
-  transition: var(--p-background-color) all 4s ease-in-out 1s;
+  transition: var(--p-background-color) 0.5s ease;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 #navbarItems {
   position: fixed;
-  transition: 0.4s;
+  transition: background-color 0.5s ease, font-size 0.5s ease,
+    padding-right 0.5s ease;
   right: 1%;
   padding: 0.5rem;
 }
