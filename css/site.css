@@ -226,6 +226,14 @@ footer {
   margin-top: 1rem;
 }
 
+@media (min-width: 200px) and (max-width: 300px) {
+  .navbar-toggler {
+    position: absolute;
+    top: 16%;
+    right: 20%;
+    z-index: 6789;
+  }
+}
 @media (min-width: 767px) {
   .logo {
     max-width: 10%;
