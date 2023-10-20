@@ -1,0 +1,105 @@
+/* hc-wrapper is a stand alone component, works w squares
+
+Hover card images are 200px x 200px or 300px x 300px
+1. Make all the hover cards the same size if you are using them in a group
+2. Make sure the source images are large enough so they don't stretch
+3. The images are assumed to be square.
+*/
+
+.hc-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.hc-card {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px; /* not rounding  yet bc its rounding the elemnt not the img */
+  padding: 1.5rem;
+  background: var(--jt-light-color);
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  margin-bottom: 27px;
+}
+
+.hc-card:hover {
+  transform: translateY(20px);
+}
+
+.hc-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  transition: 0.5s ease-in;
+  opacity: 0;
+}
+
+.hc-card:hover::before {
+  opacity: 1;
+}
+
+.hc-card:hover .hc-content {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.hc-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+}
+
+.hc-card .hc-content {
+  position: relative;
+  z-index: 3;
+  color: var(--jt-light-color);
+  transform: translateY(25px);
+  transition: 1.5s;
+  opacity: 0;
+}
+
+.hc-card .hc-content p {
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.hc-card .hc-content button {
+  padding: 0.6rem;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background: var(--jt-light-color);
+  color: var(--jt-dark-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.hc-card .hc-content button:hover {
+  background: var(--jt-secondary-color);
+  color: var(--jt-light-color);
+}
+
+/* media break points */
+
+@media (min-width: 1200px) {
+  .hc-card {
+    width: 300px;
+    height: 300px;
+  }
+}
