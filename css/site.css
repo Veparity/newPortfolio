@@ -224,6 +224,8 @@ a.hello:hover {
 footer {
   border-top: 1px solid #9da3bb;
   margin-top: 1rem;
+  flex-shrink: 1;
+  overflow-x: hidden;
 }
 
 @media (min-width: 200px) and (max-width: 300px) {
