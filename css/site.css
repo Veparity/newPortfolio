@@ -6,12 +6,15 @@
   --p-cool-color: #7e819a;
   --p-blue: #222d4c;
   --p-highlight-color: white;
-
+  --transition-speed: 0;
+  --transition-step: 0;
   --p-box-shadow: rgba(17, 12, 46, 0.15);
   --p-font-color: #e9a447;
   --p-font-family: "Montserrat", sans-serif;
 }
-
+div {
+  scroll-snap-type: y mandatory;
+}
 body {
   min-height: 100vh;
   flex-wrap: wrap;
@@ -115,6 +118,19 @@ header {
 
   overflow: hidden;
 }
+.load-in-from-top {
+  transform: translateY(-100%);
+  animation: slideDown 1s forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 /* Make sure bannerimg can be seen thru opacity */
 .herobanner::before {
@@ -139,12 +155,11 @@ header {
 }
 .hero {
   height: 73vh;
-  padding-top: 50%;
 }
 
 .bannertext {
   display: flex;
-  margin-top: 20%;
+  margin-top: 10%;
   text-align: right;
   font-size: 40px;
   justify-content: flex-start;
@@ -300,5 +315,9 @@ footer {
 @media (min-width: 1199px) {
   .bannertext {
     margin-top: 25%;
+  }
+  .bannerimg {
+    width: 50rem;
+    top: 1%;
   }
 }
