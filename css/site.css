@@ -120,13 +120,14 @@ header {
 }
 .load-in-from-top {
   transform: translateY(-100%);
-  animation: slideDown 1s forwards;
+  animation: slideDown 3s forwards;
 }
 
 @keyframes slideDown {
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -154,7 +155,7 @@ header {
   z-index: 2;
 }
 .hero {
-  height: 73vh;
+  height: 80vh;
 }
 
 .bannertext {
@@ -241,6 +242,7 @@ footer {
   margin-top: 1rem;
   flex-shrink: 1;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 @media (min-width: 200px) and (max-width: 300px) {
